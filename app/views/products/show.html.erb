@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Sku:</b>
+  <%= @product.sku %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @product.name %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @product.price %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @product.category.try(:label) %>
+</p>
+
+<p>
+  <b>Supplier:</b>
+  <%= @product.supplier.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_supplier_product_path(@supplier, @product) %> |
+<%= link_to 'Back', @supplier %>

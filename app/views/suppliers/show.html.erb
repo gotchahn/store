@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @supplier.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @supplier.email %>
+</p>
+
+<p>
+  <b>Founded at:</b>
+  <%= @supplier.founded_at %>
+</p>
+
+<div>
+  <% if @supplier.products.any? %>
+    <table>
+      <tr>
+        <th>SKU</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <% @supplier.products.each do |product| %>
+        <tr>
+          <td><%= link_to product.sku, supplier_product_path(@supplier, product) %>
+          </td>
+          <td><%= product.name %></td>
+          <td>$<%= product.price %></td>
+          <td><%= link_to 'Edit', edit_supplier_product_path(@supplier, product) %></td>
+          <td><%= link_to 'Destroy', supplier_product_path(@supplier, product), :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% else %>
+    <em>No tiene productos</em>
+  <% end %>
+
+  <div>
+  <%= link_to 'Agregar Producto', new_supplier_product_path(@supplier) %>
+</div>
+</div>
+
+<%= link_to 'Edit', edit_supplier_path(@supplier) %> |
+<%= link_to 'Back', suppliers_path %>
