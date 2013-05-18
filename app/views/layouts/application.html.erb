@@ -6,12 +6,43 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
- <div>
-  <%= link_to "HOME", root_path %>
- </div>
+<body class="homepage">
 
-<%= yield %>
+  <div id="header-wrapper">
+      <div id="header-wrapper2">
+        <header class="5grid-layout">
+          <div class="row">
+            <div class="12u" id="logo">
+              <h1><a href="#" class="mobileUI-site-name">GotchaStore</a></h1>
+              <p>La mejor tienda del barrio</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="12u" id="menu">
+              <nav class="mobileUI-site-nav">
+                <ul>
+                  <li>
+                    <%= link_to "Proveedores", suppliers_path %>
+                  </li>
+                  <li>
+                    <%= link_to "Categorias", categories_path %>
+                  </li>
+                  <li>
+                    <%= link_to "Listado", product_list_path %>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </header>
+      </div>
+    </div>
+    <div id="page-wrapper">
+      <div>
+        <%= image_tag "rails.png" %>
+      </div>
+      <%= yield %>
+    </div>
 
 </body>
 </html>
