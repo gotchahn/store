@@ -10,10 +10,10 @@
 
   <div id="header-wrapper">
       <div id="header-wrapper2">
-        <header class="5grid-layout">
+        <header id="header" class="5grid-layout">
           <div class="row">
             <div class="12u" id="logo">
-              <h1><a href="#" class="mobileUI-site-name">GotchaStore</a></h1>
+              <h1><%= link_to "Gotcha Store", root_path %></h1>
               <p>La mejor tienda del barrio</p>
             </div>
           </div>
@@ -39,7 +39,6 @@
     </div>
     <div id="page-wrapper">
       <div>
-        <%= image_tag "rails.png" %>
       </div>
       <%= yield %>
     </div>
